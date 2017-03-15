@@ -14,18 +14,18 @@ sudo systemctl stop plexmediaserver.service &> /dev/null
 if [ ! -f $target_file ]
   then
     sudo touch $target_file
-    sudo cp plexmediaserver.service $target_file &> /dev/null
+    sudo mv -f plexmediaserver.service $target_file &> /dev/null
     sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
     sudo systemctl --system daemon-reload &> /dev/null
     sudo service plexmediaserver start &> /dev/null
 elif [ $fs -eq 0 ]
    then
-    sudo cp plexmediaserver.service $target_file &> /dev/null
+    sudo mv -f plexmediaserver.service $target_file &> /dev/null
     sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
     sudo systemctl --system daemon-reload &> /dev/null
     sudo service plexmediaserver start &> /dev/null
 else
-  sudo cp plexmediaserver.service $target_file &> /dev/null
+  sudo mv -f plexmediaserver.service $target_file &> /dev/null
   sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
   sudo systemctl --system daemon-reload &> /dev/null
   sudo service plexmediaserver start &> /dev/null
