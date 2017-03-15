@@ -6,6 +6,8 @@ Plexmedia server on Ubuntu 16.X was not able to read files from external disk's.
 
   ```
   sudo apt-get update && sudo apt-get install git -y
+  ```
+  ```
   git clone https://github.com/abhisekpadhi/plex-server-ubuntu16-fix
   ```
 
