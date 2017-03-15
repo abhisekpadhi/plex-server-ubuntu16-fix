@@ -16,6 +16,9 @@ fs=`du -k $target_file | cut -f1`
 #   sudo service plexmediaserver restart &> /dev/null
 # }
 
+# sudo systemctl stop plexmediaserver.service &> /dev/null
+sudo service plexmediaserver stop &> /dev/null
+
 if [ ! -f $target_file ]
   then
     sudo touch $target_file
@@ -23,20 +26,17 @@ if [ ! -f $target_file ]
     sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
     sudo systemctl --system daemon-reload &> /dev/null
     sudo service plexmediaserver start &> /dev/null
-    sudo service plexmediaserver restart &> /dev/null
 elif [ $fs -eq 0 ]
    then
     sudo cp plexmediaserver.service.txt $target_file &> /dev/null
     sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
     sudo systemctl --system daemon-reload &> /dev/null
     sudo service plexmediaserver start &> /dev/null
-    sudo service plexmediaserver restart &> /dev/null
 else
   sudo cp plexmediaserver.service.txt $target_file &> /dev/null
   sudo chown -R $curr_usr:$curr_grp /var/lib/plexmediaserver &> /dev/null
   sudo systemctl --system daemon-reload &> /dev/null
   sudo service plexmediaserver start &> /dev/null
-  sudo service plexmediaserver restart &> /dev/null
 fi
 
 echo " "
