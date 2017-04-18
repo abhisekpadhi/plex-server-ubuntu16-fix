@@ -33,6 +33,6 @@ fi
 
 echo " "
 echo " "
-echo "Thanks for using this script, Credits: https://goo.gl/N4Tc2B"
+echo "Enjoy Your Plex !"
 echo " "
 echo " "
